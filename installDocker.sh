@@ -1,3 +1,4 @@
+#!/bin/bash
 # 环境: Ubuntu 16.04
 # 用途: 部署 docker 服务
 
@@ -16,6 +17,7 @@ apt-get update
 apt-get purge lxc-docker
 # 验证下APT是从正确的库源下载应用的
 apt-cache policy docker-engine
+
 # 更新包管理仓库
 apt-get update
 # 安装 linux-image-extra
