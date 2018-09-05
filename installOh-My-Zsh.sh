@@ -20,5 +20,5 @@ echo 'source $ZSH/oh-my-zsh.sh' >> ~/.zshrc
 
 # 激活配置
 source ~/.zshrc 
-
+echo '执行: "source ~/.zshrc" 激活配置'
 
