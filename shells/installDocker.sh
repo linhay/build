@@ -27,6 +27,13 @@ apt-get update
 # 通过apt命令在线安装docker
 apt-get install docker-engine -y
 
+# 更新pip
+pip install --upgrade pip
+# 安装docker-compose
+pip install docker-compose
+# docker-compose 版本
+docker-compose --version 
+
 # 开启docker的守护进程（Docker服务开启）
 service docker start
 # Hello world的来测试安装成功
