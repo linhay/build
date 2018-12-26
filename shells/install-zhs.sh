@@ -7,5 +7,3 @@ sudo apt-get install zsh -y
 zsh --version
 # 设置zsh为默认shell
 sudo chsh -s $(which zsh)
-# 立即重启
-shutdown -r now
