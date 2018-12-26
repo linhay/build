@@ -1,5 +1,6 @@
 #!/bin/bash
 sh install-docker.sh
+sh install-node.sh
 sh fixLocaleSetting.sh
 sh install-zhs.sh
 sh install-oh-my-zsh.sh
