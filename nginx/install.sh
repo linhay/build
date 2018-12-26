@@ -1,3 +1,4 @@
 #!/bin/bash
 apt-get install nginx -y
-# cp -f ./
+cp -fr ./backup/* ~/nginx/
+cp -fr ./base/* /etc/nginx/
