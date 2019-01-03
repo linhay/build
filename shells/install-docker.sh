@@ -27,8 +27,10 @@ apt-get update
 # 通过apt命令在线安装docker
 apt-get install docker-engine -y
 
-# 更新pip
+# 安装与更新 pip
+apt install python-pip -y
 pip install --upgrade pip
+
 # 安装docker-compose
 pip install docker-compose
 # docker-compose 版本
