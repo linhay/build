@@ -1,0 +1,8 @@
+version: '3'
+services:
+  hexo:
+      container_name: hexo
+      restart: always
+      build: hexo/
+      ports:
+        - "9000:9000"
