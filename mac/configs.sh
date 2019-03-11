@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # 模拟器全屏支持
 defaults write com.apple.iphonesimulator AllowFullscreenMode -bool YES ​​​​
 
