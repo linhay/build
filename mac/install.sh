@@ -45,6 +45,8 @@ brew cask install electronic-wechat  #微信
 brew cask install rescuetime  #统计在电脑上各类行为的时间
 brew cask install MacPass
 brew cask install iina
+brew cask install v2rayu
+
 
 
 brew install mas
