@@ -1,0 +1,1 @@
+gem list --local --no-version | grep cocoapods | xargs gem uninstall
