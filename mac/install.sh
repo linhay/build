@@ -3,18 +3,29 @@
 # gem换源
 gem source -r https://rubygems.org/
 gem source -a https://gems.ruby-china.com
-gem update
+sudo gem update
 
 #ruby升级
 sudo curl -L https://get.rvm.io | bash -s stable
 source ~/.rvm/scripts/rvm
 rvm -v
+echo "export rvm_max_time_flag=20" >> ~/.rvmrc
+rvm install 2.6.3
+rvm use 2.6.3 --default
 
 
 # install brew
 if test ! $(which brew); then
     echo "Installing homebrew..."
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+    # https://mirrors.tuna.tsinghua.edu.cn/help/homebrew/
+    cd "$(brew --repo)"
+    git remote set-url origin https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/brew.git
+
+    cd "$(brew --repo)/Library/Taps/homebrew/homebrew-core"
+    git remote set-url origin https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-core.git
+
 fi
 
 
@@ -22,12 +33,23 @@ brew update
 
 # install zsh
 brew install zsh
-sudo chsh -s /usr/local/bin/zsh
+chsh -s /bin/zsh  
 sudo sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+cp ./.zshrc  ~/.zshrc
+source ~/.zshrc
+upgrade_oh_my_zsh
+
+sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+sudo chown -R $(whoami) /usr/local/Cellar
+
+# zsh-syntax-highlighting
+sudo git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+
 
 brew install git
 brew install node
-
+brew install python3
+pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
 
 # GUI
 brew cask install sourcetree
@@ -43,18 +65,27 @@ brew cask install visual-studio-code
 brew cask install thunder  #迅雷	
 brew cask install electronic-wechat  #微信
 brew cask install rescuetime  #统计在电脑上各类行为的时间
-brew cask install MacPass
+brew cask install macpass
 brew cask install iina
 brew cask install v2rayu
+brew cask install pycharm
+brew cask install fastlane
+brew cask install carbonize
+echo "export PATH="$HOME/.fastlane/bin:$PATH" >> ~/.zshrc
 
+brew cask install sogouinput
 
+# font
+brew tap caskroom/fonts
+brew cask install font-fira-code
 
 brew install mas
 # https://itunes.apple.com/cn/app/xcode/id497799835?mt=12
-mas install 497799835 #xcode
+mas install 497799835 # xcode
 # https://itunes.apple.com/cn/app/%E5%BE%AE%E4%BF%A1/id836500024?mt=12
-mas install 836500024 #wechat
+mas install 836500024 # wechat
 # https://itunes.apple.com/cn/app/amphetamine/id937984704?mt=12
-mas install 937984704 #amphetamine
+mas install 937984704 # amphetamine
 # https://itunes.apple.com/cn/app/reeder-3/id880001334?mt=12
-mas install 880001334 #reeder 3
+mas install 880001334 # reeder 3
+mas install 425424353 # the-unarchiver

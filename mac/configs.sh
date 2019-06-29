@@ -1,5 +1,6 @@
 #!/bin/bash
 
+sudo  hostname linhey
 # 模拟器全屏支持
 defaults write com.apple.iphonesimulator AllowFullscreenMode -bool YES ​​​​
 
